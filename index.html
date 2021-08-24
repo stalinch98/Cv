@@ -7,27 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
-        posicionarMenu();
-
-        $(window).scroll(function() {
-            posicionarMenu();
-        });
-
-        function posicionarMenu() {
-            var altura_del_header = $('#home').outerHeight(true);
-            var altura_del_menu = $('#menu').outerHeight(true);
-
-            if ($(window).scrollTop() >= altura_del_header) {
-                $('#menu').addClass('fixed');
-                $('#skills').css('margin-top', (altura_del_menu) + 'px');
-            } else {
-                $('#menu').removeClass('fixed');
-                $('#skills').css('margin-top', '0');
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -54,6 +33,7 @@
             <li><a href="#">CONTACTO</a></li>
             <li><a href="#">PROYECTOS</a></li>
             <li><a href="#skills">HABILIDADES</a></li>
+            <li><a href="#resume">EDUCACIÓN</a></li>
             <li><a href="#about">ACERCA DE</a></li>
             <li><a href="#home">INICIO</a></li>
         </ul>
@@ -89,6 +69,31 @@
                 <h3>Objetivo</h3>
                 <p>
                     Desarrollador de Software (JavaScript, Node.js, Python, etc.)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <h2>Educación</h2>
+            <img src="/assets/img/section-divider.png" alt="">
+            <div class="timeline">
+                <div class="container-time left">
+                    <div class="content">
+                        <h3>2010-2017</h3>
+                        <i class="fas fa-graduation-cap fa-2x"></i>
+                        <h2>Unidad Educativa Fiscal Abdón Calderón</h2>
+                        <p>Bachiller en Ciencias.</p>
+                    </div>
+                </div>
+                <div class="container-time right">
+                    <div class="content">
+                        <h3>2017-2022</h3>
+                        <i class="fas fa-user-graduate fa-2x"></i>
+                        <h2>Universidad Politécnica Salesiana</h2>
+                        <p>Estudiante de 9no semestre en Ingeniería en Ciencias de la Computacion.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
