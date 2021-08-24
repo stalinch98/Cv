@@ -7,6 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        posicionarMenu();
+
+        $(window).scroll(function() {
+            posicionarMenu();
+        });
+
+        function posicionarMenu() {
+            var altura_del_header = $('#home').outerHeight(true);
+            var altura_del_menu = $('#menu').outerHeight(true);
+
+            if ($(window).scrollTop() >= altura_del_header) {
+                $('#menu').addClass('fixed');
+                $('#skills').css('margin-top', (altura_del_menu) + 'px');
+            } else {
+                $('#menu').removeClass('fixed');
+                $('#skills').css('margin-top', '0');
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -28,15 +49,49 @@
         </div>
 
     </section>
-    <nav>
+    <nav id="menu">
         <ul>
             <li><a href="#">CONTACTO</a></li>
             <li><a href="#">PROYECTOS</a></li>
             <li><a href="#skills">HABILIDADES</a></li>
-            <li><a href="#">ACERCA DE</a></li>
+            <li><a href="#about">ACERCA DE</a></li>
             <li><a href="#home">INICIO</a></li>
         </ul>
     </nav>
+
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <h2>BIOGRAFIA
+            </h2>
+            <img src="/assets/img/section-divider.png" alt="">
+            <div class="biography">
+                <div class="myphoto">
+                    <img src="/assets/img/me.jpg" alt="">
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>
+                            <div class="data"> <i class="fa fa-fw fa-id-badge"></i> <strong>Nombre:</strong> </div>
+                            <div class="personal-data"><span>Stalin Chiguano</span></div>
+                        </li>
+                        <li>
+                            <div class="data"> <i class="fa fa-fw fa-calendar"></i> <strong>Nacimiento:</strong> </div>
+                            <div class="personal-data"><span>21/12/1998</span></div>
+                        </li>
+                        <li>
+                            <div class="data"> <i class="fa fa-fw fa-home"></i> <strong>Localización:</strong> </div>
+                            <div class="personal-data"><span>Quito, Ecuador</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="short-info">
+                <h3>Objetivo</h3>
+                <p>
+                    Desarrollador de Software (JavaScript, Node.js, Python, etc.)</p>
+            </div>
+        </div>
+    </section>
 
     <section id="skills">
         <div class="container">
