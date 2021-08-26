@@ -30,9 +30,9 @@
     </section>
     <nav id="menu">
         <ul>
-            <li><a href="#">CONTACTO</a></li>
-            <li><a href="#">PROYECTOS</a></li>
+            <li><a href="#contact">CONTACTO</a></li>
             <li><a href="#skills">HABILIDADES</a></li>
+            <li><a href="#projects">PROYECTOS</a></li>
             <li><a href="#resume">EDUCACIÓN</a></li>
             <li><a href="#about">ACERCA DE</a></li>
             <li><a href="#home">INICIO</a></li>
@@ -75,7 +75,7 @@
 
     <section id="resume">
         <div class="container">
-            <h2>Educación</h2>
+            <h2>EDUCACIÓN</h2>
             <img src="/assets/img/section-divider.png" alt="">
             <div class="timeline">
                 <div class="container-time left">
@@ -94,6 +94,33 @@
                         <p>Estudiante de 9no semestre en Ingeniería en Ciencias de la Computacion.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>PROYECTOS</h2>
+            <img src="/assets/img/section-divider.png" alt="">
+            <div class="card-grid">
+                <a class="card" href="https://github.com/stalinch98/HouseTime">
+                    <div class="card__background" style="background-image: url(./assets/img/house-time.png)"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">HouseTime</h3>
+                    </div>
+                </a>
+                <a class="card" href="https://github.com/stalinch98/Cuygle">
+                    <div class="card__background" style="background-image: url(./assets/img/cuygle.jpg)"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Cuygle</h3>
+                    </div>
+                </a>
+                <a class="card" href="https://github.com/stalinch98/Platzi-Video">
+                    <div class="card__background" style="background-image: url(./assets/img/platzi-video.png)"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Platzi Video</h3>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -160,6 +187,53 @@
                 <div class="django icon"> <img src="/assets/img/django-logo.png" alt=""> <span>Django</span> </div>
                 <label for="">55%</label>
                 <div id="progress-django" class="progress"></div>
+            </div>
+        </div>
+    </section>
+    <div class="container3">
+    </div>
+    <section id="contact">
+        <div class="container">
+            <h2>CONTACTO
+            </h2>
+            <img src="/assets/img/section-divider.png" alt="">
+
+            <div class="contact-info">
+                <div id="left">
+                    <div class="contact-forms">
+                        <div class="cell"> <i class="fa fa-mobile-alt fa-2x"></i>
+                            <div class="contact-number"> <strong>CELULAR:</strong><span>+593 995882909</span> </div>
+                        </div>
+                        <div class="email"> <i class="fa fa-at fa-2x"></i>
+                            <div class="contact-email"> <strong>EMAIL:</strong><a href="stalin_dany98@hotmail.com">Escribir un Correo</a> </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2042776.193951151!2d-79.54981257958015!3d-0.18619061570813528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1sen!2sec!4v1629959521728!5m2!1sen!2sec"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div id="right">
+                    <div class="message">
+                        <h3>ENVÍAME UN MENSAJE CORTO</h3>
+                        <form action="">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name">
+
+                            <label for="email">Correo electrónico</label>
+                            <input type="text" id="email">
+
+                            <label for="tema">Tema</label>
+                            <input type="text" id="tema">
+                            <label for="tema">Mensaje</label>
+                            <textarea id="tema" cols="30" rows="10"></textarea>
+
+                            <input type="submit" value="ENVIAR">
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
