@@ -3,6 +3,10 @@ body {
     padding: 0 !important;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* HOME */
 
@@ -27,22 +31,43 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.intro {
+#home .intro {
     position: absolute;
 }
 
-.intro h1 {
+#home .intro h1 {
     text-align: center;
     font-size: 44PX;
     color: #52b3d9;
     font-family: Arial, Helvetica, sans-serif;
+    animation: crecer 2.5s;
 }
 
-.intro h2 {
+@keyframes crecer {
+    0% {
+        font-size: 0
+    }
+    100% {
+        font-size: 44px
+    }
+}
+
+#home .intro h2 {
     text-align: center;
     font-size: 28PX;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    animation: rotar 2s linear;
+}
+
+@keyframes rotar {
+    0% {
+        font-size: 0
+    }
+    100% {
+        font-size: 28px;
+        transform: rotate(360deg);
+    }
 }
 
 .social-icons {
@@ -54,6 +79,25 @@ body {
 .social-icons ul li {
     display: inline;
     padding: 8px 16px;
+}
+
+.social-icons ul {
+    animation: aparecer 2s ease-in-out;
+}
+
+@keyframes aparecer {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
 }
 
 .social-icons,
@@ -104,6 +148,9 @@ a {
 
 #menu {
     width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 999;
 }
 
 nav ul {
@@ -740,17 +787,18 @@ i {
     width: 55%;
     height: 100%;
     border-radius: 9px;
-    animation: load 3s normal forwards;
+    /* animation: load 3s normal forwards; */
 }
 
-@keyframes load {
+
+/* @keyframes load {
     0% {
         width: 0;
     }
     100% {
         width: 55%;
     }
-}
+} */
 
 .skill-progress label {
     float: right;
