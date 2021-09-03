@@ -1,6 +1,7 @@
-body {
-    margin: 0 !important;
-    padding: 0 !important;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -11,12 +12,11 @@ html {
 /* HOME */
 
 #home {
+    background-image: url('/assets/img/fondo.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/assets/img/fondo.jpg');
     height: 100vh;
-    width: 100%;
     background-size: cover;
     position: relative;
 }
@@ -36,20 +36,13 @@ html {
 }
 
 #home .intro h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 44PX;
     color: #52b3d9;
     font-family: Arial, Helvetica, sans-serif;
-    animation: crecer 2.5s;
-}
-
-@keyframes crecer {
-    0% {
-        font-size: 0
-    }
-    100% {
-        font-size: 44px
-    }
+    animation: aparecer 2s ease-in-out;
 }
 
 #home .intro h2 {
@@ -57,17 +50,7 @@ html {
     font-size: 28PX;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    animation: rotar 2s linear;
-}
-
-@keyframes rotar {
-    0% {
-        font-size: 0
-    }
-    100% {
-        font-size: 28px;
-        transform: rotate(360deg);
-    }
+    animation: aparecer 2s ease-in-out;
 }
 
 .social-icons {
@@ -143,40 +126,110 @@ a {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    #home .intro h1 {
+        font-size: 30PX;
+    }
+    #home .intro h2 {
+        font-size: 24PX;
+    }
+}
+
 
 /* NAV */
 
-#menu {
-    width: 100%;
+nav {
+    background: #1a1e23;
+    padding: 0 1px;
     position: fixed;
-    top: 0px;
-    z-index: 999;
+    width: 100%;
+    z-index: 2;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #343c44;
-}
-
-nav li {
-    float: right;
-    margin-right: 40px;
-}
-
-nav li a {
-    display: block;
+a {
     color: white;
-    text-align: center;
-    padding: 20px 22px;
     text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-nav li a:hover {
+.menu {
+    list-style-type: none;
+}
+
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+
+.item {
+    padding: 10px;
+}
+
+.item,
+a:hover {
     color: #68c3a3;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.active .item {
+    display: block;
+}
+
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+}
+
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
 }
 
 
@@ -190,7 +243,7 @@ nav li a:hover {
 }
 
 #about .container {
-    width: 30%;
+    width: 35%;
     margin-top: 80px;
 }
 
@@ -253,7 +306,43 @@ strong {
 
 .short-info p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 600px) {
+    #about .container {
+        width: 100%;
+        margin-top: 20px;
+    }
+    #about h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    .biography {
+        margin: 20px;
+        padding: 20px;
+    }
+    .biography ul {
+        list-style: none;
+        text-align: left;
+        display: inline-block;
+    }
+    .biography strong {
+        display: none;
+    }
+    .biography li {
+        border-bottom: 2px solid #eeeeee;
+        padding: 32px;
+        margin-left: -50px;
+    }
+    .personal-data {
+        float: left;
+        padding: 5px;
+    }
+    .short-info p {
+        margin-top: -100px;
+        font-size: 16px;
+    }
 }
 
 
@@ -316,7 +405,7 @@ strong {
 }
 
 .left {
-    left: -6.7%;
+    left: -0.1%;
 }
 
 .right {
@@ -395,27 +484,41 @@ i {
     color: #3e763f;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+    #resume .container h2 {
+        font-size: 40px;
+    }
+    .timeline {
+        margin-top: 10px;
+    }
     .timeline::after {
-        left: 31px;
+        left: 0;
     }
     #resume .container-time {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+        width: 120%;
     }
     #resume .container-time::before {
-        left: 60px;
-        border: medium solid black;
+        left: 30px;
         border-width: 10px 10px 10px 0;
-        border-color: transparent black transparent transparent;
+        border-color: transparent #eeeeee transparent transparent;
     }
-    .left::after,
+    .left::after {
+        left: -16px;
+    }
     .right::after {
-        left: 15px;
+        left: 0;
     }
     .right {
-        left: 0%;
+        left: -17px;
+    }
+    .container-time .content h3 {
+        font-size: 20px;
+    }
+    #resume .container-time .content h2 {
+        font-size: 25px;
+    }
+    #resume .container-time .content p {
+        font-size: 15px;
     }
 }
 
@@ -449,6 +552,15 @@ i {
     grid-row-gap: 24px;
     max-width: 1400px;
     width: 100%;
+}
+
+@media (min-width: 0px) and (max-width: 360px) {
+    #projects .container h2 {
+        font-size: 40px;
+    }
+    .card-grid {
+        margin-top: 20px;
+    }
 }
 
 @media(min-width: 540px) {
@@ -524,7 +636,6 @@ i {
 
 .container {
     width: 30%;
-    margin-top: 80px;
 }
 
 .container h2,
@@ -535,6 +646,7 @@ h3 {
 
 .container,
 h2 {
+    margin-top: 80px;
     font-size: 50px;
 }
 
@@ -829,6 +941,74 @@ i {
     clear: both;
 }
 
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    .container,
+    h2 {
+        font-size: 30px;
+    }
+    .container,
+    h3 {
+        font-size: 20px;
+    }
+    #skills .container span {
+        font-size: 14px;
+    }
+    .skill-progress label {
+        font-size: 15px;
+        margin-top: -20px;
+    }
+    .skill-progress {
+        margin: 6px;
+        padding: 7px;
+        display: flex;
+    }
+    .progress {
+        width: 50%;
+        float: right;
+        margin-left: -30px;
+    }
+    .icon {
+        width: 50%;
+        float: left;
+    }
+    #progress-html {
+        width: 150px;
+    }
+    #progress-css {
+        width: 150px;
+    }
+    #progress-node {
+        width: 150px;
+    }
+    #progress-js {
+        width: 150px;
+    }
+    #progress-jq {
+        width: 150px;
+    }
+    #progress-mysql {
+        width: 150px;
+    }
+    #progress-mongo {
+        width: 150px;
+    }
+    #progress-angular {
+        width: 150px;
+    }
+    #progress-react {
+        width: 150px;
+    }
+    #progress-python {
+        width: 150px;
+    }
+    #progress-django {
+        width: 150px;
+    }
+}
+
 .container3 {
     padding-top: 70px;
     padding-bottom: 100px;
@@ -853,7 +1033,6 @@ i {
 
 #contact .container {
     width: 70%;
-    margin-top: 80px;
 }
 
 #contact .container h2 {
@@ -867,6 +1046,10 @@ i {
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+
+#left {
+    margin-top: 30px;
 }
 
 .contact-info {
@@ -944,12 +1127,52 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+@media only screen and (max-width: 600px) {
+    #contact .container {
+        width: 100%;
+    }
+    #contact .container h2 {
+        font-size: 40px;
+    }
+    #contact .container h3 {
+        font-size: 13px;
+    }
+    .contact-info {
+        margin-top: 20px;
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+    .contact-info #left,
+    .email {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        float: right;
+    }
+    .contact-info #right,
+    .cell {
+        width: 100%;
+        float: left;
+    }
+    .map iframe {
+        width: 320px;
+    }
+    input[type=text],
+    textarea {
+        width: 90%;
+    }
+    input[type=submit] {
+        width: 35%;
+    }
+}
+
 
 /* FOOTER */
 
 footer {
     padding: 18px 20px;
-    background-color: #343c44;
+    background-color: #1a1e23;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
